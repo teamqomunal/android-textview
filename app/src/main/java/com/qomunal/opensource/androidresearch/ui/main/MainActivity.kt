@@ -2,6 +2,7 @@ package com.qomunal.opensource.androidresearch.ui.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.qomunal.opensource.androidresearch.R
 import com.qomunal.opensource.androidresearch.common.base.BaseActivity
 import com.qomunal.opensource.androidresearch.common.ext.showToast
 import com.qomunal.opensource.androidresearch.databinding.ActivityMainBinding
@@ -23,8 +24,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun initUI() {
         binding.apply {
-            btnTest.setOnClickListener {
-                showToast("Yes u click on me")
+            tvReadMore.apply {
+                setCollapsedText("More")
+                setExpandedText("Less")
+                setCollapsedTextColor(R.color.more)
+                setExpandedTextColor(R.color.less)
+                setTrimLines(4)
             }
         }
     }
